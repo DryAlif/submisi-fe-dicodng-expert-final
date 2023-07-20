@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+button[class^='btn-']:hover,
+a[class^='btn-']:hover,
+input[class^='btn-']:hover {
+  background-color: var(--dark-orange-color);
+}
+
+.notFound {
+  grid-template-columns: 1fr !important;
+  color: var(--dark-orange-color);
+  font-size: 2.2rem;
+  font-weight: 600;
+  width: 100%;
+}
+
+.lead {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: var(--dark-color);
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+}
+
+%card {
+  background-color: var(--white-smoke-color);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+  border: 1px solid var(--orange-color);
+  border-radius: 10px;
+  transition: box-shadow 0.3s;
+
+  &:hover {
+    box-shadow: 0px 0px 10px 4px rgba(255, 146, 0, 1);
+  }
+}
+
+#loading {
+  width: 80px;
+  height: 80px;
+  border: 1rem solid var(--gray-color);
+  border-top: 1.1rem solid var(--dark-orange-color);
+  border-radius: 100%;
+  margin: auto;
+  visibility: visible;
+  animation: spin 1s infinite linear;
+}
+#loading.display-hide {
+  visibility: hidden;
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  background-color: var(--dark-color);
+  color: var(--orange-color);
+  padding: 10px;
+  font-size: 20px;
+  z-index: 100;
+  text-decoration: none;
+}
+.skip-link:focus {
+  top: 8rem;
+}
+
+::-webkit-scrollbar {
+  width: 0; /* Remove scrollbar space */
+  display: none;
+}
+
+// #skip-to-content {
+//   cursor: pointer;
+// }
+
+/*
+
+restaurant item card list
+
+*/
+
+%restocard-list {
+  &__container {
+    background-color: var(--white-smoke-color);
+    display: grid;
+
+    // grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 1.5rem;
+  }
+
+  &__city-name {
+    position: absolute;
+    top: 0.5rem;
+    left: 0;
+    min-width: 8rem;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-color: rgba(51, 51, 51, 0.85);
+    padding: 0.2rem 0.5rem 0.2rem;
+    color: var(--orange-color);
+    font-weight: 300;
+  }
+
+  &__item > li {
+    @extend %card;
+    border: 0.2rem solid var(--gray-color);
+    border-radius: 0.5rem;
+    list-style-type: none;
+  }
+
+  &__item > li > figure {
+    max-height: 200px;
+    overflow: hidden;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    position: relative;
+  }
+
+  &__item > li > figure > img {
+    width: 100%;
+    max-width: 490px;
+    object-fit: fill;
+    height: 190px;
+  }
+
+  &__item > li > figure > figcaption {
+    position: absolute;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+  }
+
+  &__item > li > figure > figcaption {
+    h1,
+    h2 {
+      color: var(--white-color);
+      padding: 0.75rem;
+      font-size: 1.45rem;
+    }
+  }
+
+  &__item > li {
+    p.rating {
+      font-size: 1.55rem;
+      color: var(--dark-color);
+      font-weight: bold;
+    }
+
+    p.rating > .rating-value {
+      color: var(--dark-orange-color);
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    p {
+      font-weight: 500;
+      font-size: 1.35rem;
+      line-height: 1.2;
+      padding: 0.5rem 0.75rem;
+      color: var(--dark-color);
+    }
+  }
+}

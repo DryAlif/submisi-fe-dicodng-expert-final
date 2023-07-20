@@ -1,0 +1,62 @@
+@media (max-width: 550px) {
+  .header__toggle-button {
+    font-size: 44px;
+    text-decoration: none;
+    color: white;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0px;
+    right: 0.1rem;
+    height: 4.5rem;
+    width: 4.5rem;
+    vertical-align: middle;
+    margin-top: 8px;
+    margin-right: 1px;
+    border: none;
+
+
+    &:focus {
+      border: 1px solid whitesmoke;
+    }
+  }
+
+  .header__navbar {
+    width: 100%;
+    display: none;
+  }
+
+  .header__nav-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header__navbar-ulist {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .header__navbar li {
+    text-align: center;
+  }
+
+  .header__navbar-link {
+    padding: 0.5rem 1rem;
+  }
+
+  .header__navbar.active {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .header__navbar.bg-dark {
+    background-color: var(--dark-color);
+  }
+}
+
+// @media screen and (min-width: 650px) {
+//   .restaurants {
+//     grid-template-columns: auto 1fr;
+//   }
+// }
