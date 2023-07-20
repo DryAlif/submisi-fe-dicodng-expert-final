@@ -7,7 +7,7 @@ const createRestaurantItemLayoutTemplate = (resto) =>
       <figure> 
         <img 
           tabindex="0" 
-          class="image" src="${CONFIG.BASE_IMAGE_URL_SMALL + resto.pictureId}" 
+          class="image lazyload" src="${CONFIG.BASE_IMAGE_URL_SMALL + resto.pictureId}" 
           alt="Restoran ${resto.name} " 
         />
         <div class="restaurant-list__city-name">
@@ -42,7 +42,7 @@ const createRestaurantLayoutDetailTemplate = (resto) => `
 <div class="restaurant">
  
  <img 
-  class="restaurant__poster" 
+  class="restaurant__poster lazyload" 
   tabID="${resto.pictureId}"
   src="${CONFIG.BASE_IMAGE_URL_MEDIUM + resto.pictureId}" 
   alt="Restoran ${resto.name}" tabindex="0" />
